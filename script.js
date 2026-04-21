@@ -17,14 +17,19 @@
 
   let currentIndex = 0;
 
-  function updateSectionVisibility(index) {
+  function updateSectionVisibility(index, options) {
+    const config = Object.assign({ updateHistory: true, historyMode: "replace", focus: true }, options);
     currentIndex = index;
 
     sections.forEach((section, sectionIndex) => {
       const isActive = sectionIndex === currentIndex;
       section.hidden = !isActive;
-      if (isActive) {
-        section.focus();
+      if (isActive && config.focus) {
+        try {
+          section.focus({ preventScroll: true });
+        } catch (_error) {
+          section.focus();
+        }
       }
     });
 
@@ -52,22 +57,27 @@
       }, { commit: false });
     }
 
-    if (history && history.replaceState) {
-      history.replaceState(null, "", `#${sectionIds[currentIndex]}`);
+    if (config.updateHistory && history && history.replaceState) {
+      const targetHash = `#${sectionIds[currentIndex]}`;
+      if (config.historyMode === "push" && history.pushState && window.location.hash !== targetHash) {
+        history.pushState(null, "", targetHash);
+      } else {
+        history.replaceState(null, "", targetHash);
+      }
     }
   }
 
-  function jumpToSection(id) {
+  function jumpToSection(id, options) {
     const index = sectionIds.indexOf(id);
     if (index >= 0) {
-      updateSectionVisibility(index);
+      updateSectionVisibility(index, options);
     }
   }
 
   if (prevButton) {
     prevButton.addEventListener("click", function () {
       if (currentIndex > 0) {
-        updateSectionVisibility(currentIndex - 1);
+        updateSectionVisibility(currentIndex - 1, { updateHistory: true, historyMode: "push", focus: true });
       }
     });
   }
@@ -75,7 +85,7 @@
   if (nextButton) {
     nextButton.addEventListener("click", function () {
       if (currentIndex < sections.length - 1) {
-        updateSectionVisibility(currentIndex + 1);
+        updateSectionVisibility(currentIndex + 1, { updateHistory: true, historyMode: "push", focus: true });
       }
     });
   }
@@ -87,8 +97,18 @@
         return;
       }
       event.preventDefault();
-      jumpToSection(hash.slice(1));
+      jumpToSection(hash.slice(1), { updateHistory: true, historyMode: "push", focus: true });
     });
+  });
+
+  window.addEventListener("popstate", function () {
+    const id = window.location.hash ? window.location.hash.slice(1) : "";
+    const index = sectionIds.indexOf(id);
+    if (index >= 0) {
+      updateSectionVisibility(index, { updateHistory: false, focus: false });
+    } else {
+      updateSectionVisibility(0, { updateHistory: false, focus: false });
+    }
   });
 
   document.querySelectorAll("[data-reveal-target]").forEach((button) => {
@@ -204,18 +224,31 @@
     });
   }
 
+  const hashId = window.location.hash ? window.location.hash.slice(1) : "";
+  const hashIndex = sectionIds.indexOf(hashId);
+  const hasHashTarget = hashIndex >= 0;
+
   if (window.lessonScorm) {
     window.lessonScorm.initialize();
     const saved = window.lessonScorm.loadProgress();
     if (saved && saved.sectionCompletion && typeof saved.sectionCompletion === "object") {
       Object.assign(sectionCompletion, saved.sectionCompletion);
     }
-    if (saved && Number.isInteger(saved.sectionIndex)) {
-      updateSectionVisibility(Math.min(Math.max(saved.sectionIndex, 0), sections.length - 1));
+    if (hasHashTarget) {
+      updateSectionVisibility(hashIndex, { updateHistory: false, focus: false });
+    } else if (saved && Number.isInteger(saved.sectionIndex)) {
+      updateSectionVisibility(Math.min(Math.max(saved.sectionIndex, 0), sections.length - 1), {
+        updateHistory: false,
+        focus: false,
+      });
     } else {
-      updateSectionVisibility(0);
+      updateSectionVisibility(0, { updateHistory: false, focus: false });
     }
   } else {
-    updateSectionVisibility(0);
+    if (hasHashTarget) {
+      updateSectionVisibility(hashIndex, { updateHistory: false, focus: false });
+    } else {
+      updateSectionVisibility(0, { updateHistory: false, focus: false });
+    }
   }
 })();
