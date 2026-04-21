@@ -17,6 +17,8 @@ Learner interactions:
 Scoring rule:
 - Pass is awarded only when quiz score is greater than 80%.
 
+![Screenshot](screenshot.png)
+
 ## Tech Stack
 - HTML, CSS, JavaScript
 - Bootstrap 5 (CDN)
