@@ -2,6 +2,8 @@
 
 This project is a single-page SCORM 1.2 e-learning lesson that teaches when and how to use the French imperfect tense.
 
+[Demo site](https://berthelemy.github.io/html-elearning-sample/)
+
 It includes:
 - Introduction section
 - Usage rules section
