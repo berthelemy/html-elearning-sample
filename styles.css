@@ -1,3 +1,42 @@
+/* GitHub ribbon */
+.github-ribbon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12rem;
+  height: 12rem;
+  overflow: hidden;
+  z-index: 1050;
+  pointer-events: none;
+}
+
+.github-ribbon a {
+  position: absolute;
+  top: 2.75rem;
+  right: -3.25rem;
+  display: block;
+  width: 14rem;
+  padding: 0.4rem 0;
+  background-color: var(--primary-strong, #1f5d46);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transform: rotate(45deg);
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: background-color 0.2s;
+}
+
+.github-ribbon a:hover,
+.github-ribbon a:focus {
+  background-color: var(--primary, #2f7a5f);
+  outline: 3px solid var(--accent, #f2b84b);
+  outline-offset: 2px;
+}
+
 :root {
   --bg: #f6fbf8;
   --surface: #ffffff;
