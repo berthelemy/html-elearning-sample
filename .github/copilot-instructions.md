@@ -21,6 +21,7 @@
 - No build tooling is required unless explicitly introduced.
 - Validate changes by opening the page in a browser and checking interaction behavior.
 - Validate SCORM compliance in SCORM Cloud before considering packaging complete.
+- Rebuild the SCORM zip package after every content or code change so deliverables always match the latest source.
 - If packaging is needed, ensure imsmanifest.xml is at package root and all referenced assets are included.
 
 ## Conventions
