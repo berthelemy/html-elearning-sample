@@ -12,95 +12,104 @@
   </head>
   <body>
     <!-- GitHub ribbon banner -->
-    <div class="github-ribbon" aria-label="View source on GitHub">
-      <a href="https://github.com/berthelemy/html-elearning-sample" target="_blank" rel="noopener noreferrer">See the code on GitHub</a>
+    <div class="github-ribbon" aria-label="View source on GitHub" data-i18n-attr="aria-label:github_ribbon_label">
+      <a href="https://github.com/berthelemy/html-elearning-sample" target="_blank" rel="noopener noreferrer" data-i18n="github_ribbon_link">See the code on GitHub</a>
     </div>
 
-    <a class="skip-link" href="#main-content">Skip to lesson content</a>
+    <a class="skip-link" href="#main-content" data-i18n="skip_to_content">Skip to lesson content</a>
 
     <header class="hero py-5 border-bottom">
       <div class="container">
         <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
           <div>
-            <p class="eyebrow mb-2">CEFR A2 French Grammar</p>
-            <h1 class="display-5 mb-3">Master the French Imperfect Tense</h1>
-            <p class="lead mb-0">Learn when to use it, how to build it, and test yourself with a final quiz.</p>
+            <p class="eyebrow mb-2" data-i18n="hero_eyebrow">CEFR A2 French Grammar</p>
+            <h1 class="display-5 mb-3" data-i18n="hero_title">Master the French Imperfect Tense</h1>
+            <p class="lead mb-0" data-i18n="hero_subtitle">Learn when to use it, how to build it, and test yourself with a final quiz.</p>
           </div>
-          <div class="status-chip" role="status" aria-live="polite" id="lesson-status">
-            Progress: 1/4 sections
+          <div class="d-flex flex-column align-items-lg-end gap-2">
+            <div class="language-picker">
+              <label for="language-select" class="form-label mb-1" data-i18n="language_label">Language</label>
+              <select id="language-select" class="form-select form-select-sm" aria-label="Language selector" data-i18n-attr="aria-label:language_selector_aria">
+                <option value="en" data-i18n="language_option_en">English</option>
+                <option value="es" data-i18n="language_option_es">Spanish</option>
+              </select>
+            </div>
+            <div class="status-chip" role="status" aria-live="polite" id="lesson-status">
+              Progress: 1/4 sections
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <nav class="section-nav sticky-top border-bottom" aria-label="Lesson sections">
+    <nav class="section-nav sticky-top border-bottom" aria-label="Lesson sections" data-i18n-attr="aria-label:lesson_sections_nav_label">
       <div class="container py-3 d-flex flex-wrap gap-2" id="section-tabs">
-        <a class="btn btn-outline-primary btn-sm active" href="#intro" data-section-link="intro">Introduction</a>
-        <a class="btn btn-outline-primary btn-sm" href="#when-to-use" data-section-link="when-to-use">When to use</a>
-        <a class="btn btn-outline-primary btn-sm" href="#formation" data-section-link="formation">How to form</a>
-        <a class="btn btn-outline-primary btn-sm" href="#quiz" data-section-link="quiz">Quiz</a>
+        <a class="btn btn-outline-primary btn-sm active" href="#intro" data-section-link="intro" data-i18n="tab_intro">Introduction</a>
+        <a class="btn btn-outline-primary btn-sm" href="#when-to-use" data-section-link="when-to-use" data-i18n="tab_when_to_use">When to use</a>
+        <a class="btn btn-outline-primary btn-sm" href="#formation" data-section-link="formation" data-i18n="tab_how_to_form">How to form</a>
+        <a class="btn btn-outline-primary btn-sm" href="#quiz" data-section-link="quiz" data-i18n="tab_quiz">Quiz</a>
       </div>
     </nav>
 
     <main id="main-content" class="container py-5">
       <section id="intro" class="lesson-section card-soft p-4 p-lg-5 mb-4" data-section-index="0" tabindex="-1" aria-labelledby="intro-title">
-        <h2 id="intro-title">1. Introduction</h2>
-        <p>
+        <h2 id="intro-title" data-i18n="intro_title">1. Introduction</h2>
+        <p data-i18n="intro_description">
           The imperfect tense describes repeated, ongoing, or descriptive actions in the past.
           In this lesson, you will move from recognition to production and then complete a graded quiz.
         </p>
         <ul>
-          <li>You will identify when imperfect is appropriate.</li>
-          <li>You will practice building -er verb forms in imperfect.</li>
-          <li>You will complete a final scored quiz tracked for SCORM.</li>
+          <li data-i18n="intro_goal_1">You will identify when imperfect is appropriate.</li>
+          <li data-i18n="intro_goal_2">You will practice building -er verb forms in imperfect.</li>
+          <li data-i18n="intro_goal_3">You will complete a final scored quiz tracked for SCORM.</li>
         </ul>
 
-        <h3 class="h5 mt-4">Click to reveal</h3>
-        <p>Choose a context and reveal if imperfect is suitable.</p>
+        <h3 class="h5 mt-4" data-i18n="intro_reveal_title">Click to reveal</h3>
+        <p data-i18n="intro_reveal_description">Choose a context and reveal if imperfect is suitable.</p>
         <div class="d-flex flex-wrap gap-2" data-interaction="reveal-group">
-          <button type="button" class="btn btn-primary" data-reveal-target="reveal-1" aria-controls="reveal-1" aria-expanded="false">Daily habits in the past</button>
-          <button type="button" class="btn btn-primary" data-reveal-target="reveal-2" aria-controls="reveal-2" aria-expanded="false">Single completed event</button>
-          <button type="button" class="btn btn-primary" data-reveal-target="reveal-3" aria-controls="reveal-3" aria-expanded="false">Background description</button>
+          <button type="button" class="btn btn-primary" data-reveal-target="reveal-1" aria-controls="reveal-1" aria-expanded="false" data-i18n="intro_reveal_btn_1">Daily habits in the past</button>
+          <button type="button" class="btn btn-primary" data-reveal-target="reveal-2" aria-controls="reveal-2" aria-expanded="false" data-i18n="intro_reveal_btn_2">Single completed event</button>
+          <button type="button" class="btn btn-primary" data-reveal-target="reveal-3" aria-controls="reveal-3" aria-expanded="false" data-i18n="intro_reveal_btn_3">Background description</button>
         </div>
         <div class="mt-3">
-          <p id="reveal-1" class="reveal-box" hidden>Yes. Repeated past habits often use the imperfect.</p>
-          <p id="reveal-2" class="reveal-box" hidden>No. A single completed event often uses passé composé.</p>
-          <p id="reveal-3" class="reveal-box" hidden>Yes. Weather, emotions, and scene-setting often use the imperfect.</p>
+          <p id="reveal-1" class="reveal-box" hidden data-i18n="intro_reveal_answer_1">Yes. Repeated past habits often use the imperfect.</p>
+          <p id="reveal-2" class="reveal-box" hidden data-i18n="intro_reveal_answer_2">No. A single completed event often uses passé composé.</p>
+          <p id="reveal-3" class="reveal-box" hidden data-i18n="intro_reveal_answer_3">Yes. Weather, emotions, and scene-setting often use the imperfect.</p>
         </div>
       </section>
 
       <section id="when-to-use" class="lesson-section card-soft p-4 p-lg-5 mb-4" data-section-index="1" tabindex="-1" aria-labelledby="when-title" hidden>
-        <h2 id="when-title">2. When to use the imperfect tense</h2>
-        <p>Use the imperfect for background descriptions, ongoing states, and repeated actions in the past.</p>
+        <h2 id="when-title" data-i18n="when_title">2. When to use the imperfect tense</h2>
+        <p data-i18n="when_description">Use the imperfect for background descriptions, ongoing states, and repeated actions in the past.</p>
         <div class="callout mb-4">
-          <p class="mb-1"><strong>Memory tip:</strong> ask yourself if the action was a repeated habit or a setting/state in progress.</p>
-          <p class="mb-0">If yes, imperfect is often the right starting choice.</p>
+          <p class="mb-1" data-i18n-html="when_tip_1"><strong>Memory tip:</strong> ask yourself if the action was a repeated habit or a setting/state in progress.</p>
+          <p class="mb-0" data-i18n="when_tip_2">If yes, imperfect is often the right starting choice.</p>
         </div>
 
-        <h3 class="h5 mt-4">Flip cards</h3>
-        <p>Activate each card to see an example sentence.</p>
+        <h3 class="h5 mt-4" data-i18n="when_flip_title">Flip cards</h3>
+        <p data-i18n="when_flip_description">Activate each card to see an example sentence.</p>
         <div class="row g-3" id="flip-cards">
           <div class="col-sm-6">
             <button type="button" class="flip-card w-100" data-flip-card>
-              <span class="flip-front">Background scene</span>
+              <span class="flip-front" data-i18n="flip_front_1">Background scene</span>
               <span class="flip-back">Il faisait beau et les oiseaux chantaient.</span>
             </button>
           </div>
           <div class="col-sm-6">
             <button type="button" class="flip-card w-100" data-flip-card>
-              <span class="flip-front">Repeated action</span>
+              <span class="flip-front" data-i18n="flip_front_2">Repeated action</span>
               <span class="flip-back">Tous les samedis, nous visitions le marché.</span>
             </button>
           </div>
           <div class="col-sm-6">
             <button type="button" class="flip-card w-100" data-flip-card>
-              <span class="flip-front">Ongoing feeling</span>
+              <span class="flip-front" data-i18n="flip_front_3">Ongoing feeling</span>
               <span class="flip-back">Elle était fatiguée après le travail.</span>
             </button>
           </div>
           <div class="col-sm-6">
             <button type="button" class="flip-card w-100" data-flip-card>
-              <span class="flip-front">Interrupted action</span>
+              <span class="flip-front" data-i18n="flip_front_4">Interrupted action</span>
               <span class="flip-back">Je lisais quand le téléphone a sonné.</span>
             </button>
           </div>
@@ -108,8 +117,8 @@
       </section>
 
       <section id="formation" class="lesson-section card-soft p-4 p-lg-5 mb-4" data-section-index="2" tabindex="-1" aria-labelledby="formation-title" hidden>
-        <h2 id="formation-title">3. How to make the imperfect for -er verbs</h2>
-        <p>
+        <h2 id="formation-title" data-i18n="formation_title">3. How to make the imperfect for -er verbs</h2>
+        <p data-i18n-html="formation_description">
           Start from the nous present form, remove <strong>-ons</strong>, then add the imperfect endings:
           <span class="badge text-bg-light">-ais</span>
           <span class="badge text-bg-light">-ais</span>
@@ -119,16 +128,16 @@
           <span class="badge text-bg-light">-aient</span>
         </p>
 
-        <h3 class="h5 mt-4">Match the words</h3>
-        <p>Match each pronoun with the correct ending.</p>
+        <h3 class="h5 mt-4" data-i18n="formation_match_title">Match the words</h3>
+        <p data-i18n="formation_match_description">Match each pronoun with the correct ending.</p>
         <div class="callout mb-4">
-          <p class="mb-0"><strong>Example:</strong> Nous parlons -> stem <strong>parl-</strong> -> Je <strong>parlais</strong>, Nous <strong>parlions</strong>.</p>
+          <p class="mb-0" data-i18n-html="formation_example"><strong>Example:</strong> Nous parlons -> stem <strong>parl-</strong> -> Je <strong>parlais</strong>, Nous <strong>parlions</strong>.</p>
         </div>
         <form id="match-form" class="row g-3" novalidate>
           <div class="col-md-4">
             <label class="form-label" for="match-je">Je</label>
             <select id="match-je" class="form-select" data-match="je" required>
-              <option value="">Choose ending</option>
+              <option value="" data-i18n="choose_ending">Choose ending</option>
               <option value="ais">-ais</option>
               <option value="ait">-ait</option>
               <option value="ions">-ions</option>
@@ -137,7 +146,7 @@
           <div class="col-md-4">
             <label class="form-label" for="match-nous">Nous</label>
             <select id="match-nous" class="form-select" data-match="nous" required>
-              <option value="">Choose ending</option>
+              <option value="" data-i18n="choose_ending">Choose ending</option>
               <option value="iez">-iez</option>
               <option value="ions">-ions</option>
               <option value="aient">-aient</option>
@@ -146,27 +155,27 @@
           <div class="col-md-4">
             <label class="form-label" for="match-ils">Ils/Elles</label>
             <select id="match-ils" class="form-select" data-match="ils" required>
-              <option value="">Choose ending</option>
+              <option value="" data-i18n="choose_ending">Choose ending</option>
               <option value="ais">-ais</option>
               <option value="aient">-aient</option>
               <option value="ait">-ait</option>
             </select>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Check matches</button>
+            <button type="submit" class="btn btn-primary" data-i18n="check_matches">Check matches</button>
           </div>
         </form>
         <p id="match-result" class="mt-3 mb-0" role="status" aria-live="polite"></p>
       </section>
 
       <section id="quiz" class="lesson-section card-soft p-4 p-lg-5" data-section-index="3" tabindex="-1" aria-labelledby="quiz-title" hidden>
-        <h2 id="quiz-title">4. Quiz</h2>
-        <p>Answer all questions. You pass when your score is above 80%.</p>
-        <p class="mb-4">This quiz checks meaning, usage, and -er verb imperfect formation.</p>
+        <h2 id="quiz-title" data-i18n="quiz_title">4. Quiz</h2>
+        <p data-i18n="quiz_description_1">Answer all questions. You pass when your score is above 80%.</p>
+        <p class="mb-4" data-i18n="quiz_description_2">This quiz checks meaning, usage, and -er verb imperfect formation.</p>
 
         <form id="quiz-form" novalidate>
           <fieldset class="mb-4">
-            <legend class="h6">1. Which sentence best uses the imperfect?</legend>
+            <legend class="h6" data-i18n="quiz_q1_legend">1. Which sentence best uses the imperfect?</legend>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q1" id="q1a" value="a" required>
               <label class="form-check-label" for="q1a">Hier, j'ai visité le musée.</label>
@@ -178,7 +187,7 @@
           </fieldset>
 
           <fieldset class="mb-4">
-            <legend class="h6">2. Ending for nous with an -er verb in imperfect?</legend>
+            <legend class="h6" data-i18n="quiz_q2_legend">2. Ending for nous with an -er verb in imperfect?</legend>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q2" id="q2a" value="a" required>
               <label class="form-check-label" for="q2a">-ions</label>
@@ -190,19 +199,19 @@
           </fieldset>
 
           <fieldset class="mb-4">
-            <legend class="h6">3. Which meaning fits imperfect best?</legend>
+            <legend class="h6" data-i18n="quiz_q3_legend">3. Which meaning fits imperfect best?</legend>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q3" id="q3a" value="a" required>
-              <label class="form-check-label" for="q3a">A repeated past routine</label>
+              <label class="form-check-label" for="q3a" data-i18n="quiz_q3_option_a">A repeated past routine</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
-              <label class="form-check-label" for="q3b">A single finished action</label>
+              <label class="form-check-label" for="q3b" data-i18n="quiz_q3_option_b">A single finished action</label>
             </div>
           </fieldset>
 
           <fieldset class="mb-4">
-            <legend class="h6">4. Choose the best imperfect form for parler with il.</legend>
+            <legend class="h6" data-i18n="quiz_q4_legend">4. Choose the best imperfect form for parler with il.</legend>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q4" id="q4a" value="a" required>
               <label class="form-check-label" for="q4a">il parlait</label>
@@ -214,32 +223,32 @@
           </fieldset>
 
           <fieldset class="mb-4">
-            <legend class="h6">5. Which context usually needs imperfect?</legend>
+            <legend class="h6" data-i18n="quiz_q5_legend">5. Which context usually needs imperfect?</legend>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q5" id="q5a" value="a" required>
-              <label class="form-check-label" for="q5a">Describing weather during a past scene</label>
+              <label class="form-check-label" for="q5a" data-i18n="quiz_q5_option_a">Describing weather during a past scene</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="q5" id="q5b" value="b">
-              <label class="form-check-label" for="q5b">A one-time completed purchase</label>
+              <label class="form-check-label" for="q5b" data-i18n="quiz_q5_option_b">A one-time completed purchase</label>
             </div>
           </fieldset>
 
-          <button type="submit" class="btn btn-primary">Submit quiz</button>
+          <button type="submit" class="btn btn-primary" data-i18n="submit_quiz">Submit quiz</button>
         </form>
 
         <div id="quiz-result" class="mt-4 result-box" role="status" aria-live="polite"></div>
       </section>
 
       <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mt-4">
-        <button class="btn btn-outline-primary" id="prev-section" type="button">Previous section</button>
-        <button class="btn btn-primary" id="next-section" type="button">Next section</button>
+        <button class="btn btn-outline-primary" id="prev-section" type="button" data-i18n="previous_section">Previous section</button>
+        <button class="btn btn-primary" id="next-section" type="button" data-i18n="next_section">Next section</button>
       </div>
     </main>
 
     <footer class="py-4 border-top">
       <div class="container">
-        <p class="mb-0 text-muted small">SCORM 1.2 prototype lesson, built entirely using an AI agent. See the full source files, skills and instructions on <a href="https://github.com/berthelemy/html-elearning-sample" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+        <p class="mb-0 text-muted small" data-i18n-html="footer_note">SCORM 1.2 prototype lesson, built entirely using an AI agent. See the full source files, skills and instructions on <a href="https://github.com/berthelemy/html-elearning-sample" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
       </div>
     </footer>
 

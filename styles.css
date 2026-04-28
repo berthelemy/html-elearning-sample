@@ -119,6 +119,18 @@ h6 {
   color: var(--text-muted);
 }
 
+.language-picker {
+  min-width: 10rem;
+}
+
+.language-picker .form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .section-nav {
   background: rgba(246, 251, 248, 0.92);
   backdrop-filter: blur(8px);
