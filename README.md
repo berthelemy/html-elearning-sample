@@ -2,9 +2,15 @@
 
 This project is a single-page SCORM 1.2 e-learning lesson that teaches when and how to use the French imperfect tense.
 
+I created it as part of a challenge to see what I could do with just a couple of iterations using Github Copilot.
+
 [Demo site](https://berthelemy.github.io/html-elearning-sample/)
 
-It includes:
+[Article discussing the project](https://consulting.berthelemy.net/2026/04/22/do-we-still-need-authoring-tools)
+
+The Initial requirements definition (requirements.md) was used by the AI to create an implementation plan and the final project files.
+
+The final package includes:
 - Introduction section
 - Usage rules section
 - -er verb formation section
